@@ -1,4 +1,3 @@
-import { BigInt } from '@graphprotocol/graph-ts';
 import {
   Approval,
   ApprovalForAll,
@@ -13,6 +12,11 @@ export function handleIncreaseLiquidity(event: IncreaseLiquidity): void {
   let entity = Position.load(event.params.tokenId.toHex());
   if (entity == null) {
     entity = new Position(event.params.tokenId.toHex());
+    entity.approved = null;
+    entity.tokenId = event.params.tokenId;
+    entity.owner = event.transaction.from;
+    entity.staked = false;
+    entity.oldOwner = null;
   }
   entity.liquidity = event.params.liquidity;
   entity.save();
@@ -31,6 +35,7 @@ export function handleTransfer(event: Transfer): void {
   if (entity != null) {
     entity.oldOwner = event.params.to;
     entity.owner = event.params.from;
+    entity.approved = null;
     entity.save();
   }
 }
@@ -38,8 +43,7 @@ export function handleTransfer(event: Transfer): void {
 export function handleApproval(event: Approval): void {
   let entity = Position.load(event.params.tokenId.toHex());
   if (entity != null) {
-    entity.owner = event.params.approved;
-    entity.oldOwner = event.params.owner;
+    entity.approved = event.params.approved;
     entity.save();
   }
 }

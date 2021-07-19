@@ -14,7 +14,7 @@ type Position @entity {
   tokenId: BigInt!
   owner: Bytes!
   staked: Boolean!
-  oldOwner: Bytes!
+  oldOwner: Bytes
   liquidity: BigInt!
-  approvedNFTPositionsManager: Bytes!
+  approved: Bytes
 }
