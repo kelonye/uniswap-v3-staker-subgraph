@@ -3,8 +3,8 @@ o?=$(o)
 rinkeby:
 	o=rinkeby $(MAKE) deploy
 
-main:
-	o=main $(MAKE) deploy
+mainnet:
+	o=mainnet $(MAKE) deploy
 
 deploy:
 	npm run codegen:$(o)
@@ -12,5 +12,5 @@ deploy:
 	env-cmd npm run deploy:$(o)
 
 .PNOHY: rinkeby \
-	main \
+	mainnet \
 	deploy
