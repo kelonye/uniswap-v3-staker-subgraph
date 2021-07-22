@@ -8,7 +8,7 @@ dataSources:
     source:
       address: '0xC36442b4a4522E871399CD717aBDD847Ab11FE88'
       abi: NFTPositionsManager
-      startBlock: 12369651
+      startBlock: 12804494 # when first ewit-usdc nft was created
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
