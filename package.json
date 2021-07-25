@@ -1,5 +1,5 @@
 {
-  "name": "witswap-staking-subgraph",
+  "name": "uniswap-v3-staker-subgraph",
   "license": "MIT",
   "scripts": {
     "codegen:rinkeby": "graph codegen -- subgraph-rinkeby.yaml",
@@ -12,8 +12,5 @@
   "dependencies": {
     "@graphprotocol/graph-cli": "0.20.1",
     "@graphprotocol/graph-ts": "0.20.1"
-  },
-  "devDependencies": {
-    "env-cmd": "^10.1.0"
   }
 }

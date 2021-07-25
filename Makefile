@@ -9,7 +9,7 @@ mainnet:
 deploy:
 	npm run codegen:$(o)
 	npm run build:$(o)
-	env-cmd npm run deploy:$(o)
+	npm run deploy:$(o)
 
 .PNOHY: rinkeby \
 	mainnet \
