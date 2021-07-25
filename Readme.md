@@ -14,3 +14,7 @@ Subgraph to be used by the [UNI V3 Staker Frontend](https://github.com/vbstreetz
 3. Ran `yarn` to install node packages.
 4. Deploy e.g. to mainent with `make mainnet`
 5. Visit the subgraphs and verify no errors in indexing.
+
+### License
+
+MIT
