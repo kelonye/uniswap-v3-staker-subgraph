@@ -1,4 +1,4 @@
-## UNISWAP V3 Staker Subgraph
+## Uniswap V3 Staker Subgraph
 
 Subgraph to be used by the [UNI V3 Staker Frontend](https://github.com/vbstreetz/uniswap-v3-staker-frontend).
 
