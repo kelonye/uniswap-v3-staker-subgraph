@@ -33,8 +33,8 @@ export function handleDecreaseLiquidity(event: DecreaseLiquidity): void {
 export function handleTransfer(event: Transfer): void {
   let entity = Position.load(event.params.tokenId.toHex());
   if (entity != null) {
-    entity.oldOwner = event.params.to;
-    entity.owner = event.params.from;
+    entity.oldOwner = event.params.from;
+    entity.owner = event.params.to;
     entity.approved = null;
     entity.save();
   }
