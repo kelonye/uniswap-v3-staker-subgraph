@@ -18,7 +18,7 @@ export function handleIncentiveCreated(event: IncentiveCreated): void {
     ethereum.Value.fromAddress(event.params.refundee),
   ];
   let incentiveIdEncoded = ethereum.encode(
-    ethereum.Value.fromTuple(incentiveIdTuple as ethereum.Tuple)
+    ethereum.Value.fromTuple(changetype<ethereum.Tuple>(incentiveIdTuple))
   )!;
   let incentiveId = crypto.keccak256(incentiveIdEncoded);
 
